@@ -18,6 +18,7 @@ font-family: 'Roboto', sans-serif; */
     /* --main-white-color: #aaaaaa; */
     --ourteam-background-color: #F5F4FA;
     --footer-bg-color: #2F303A;
+    --icons-color: #AFB1B8;
 }
 
 
@@ -88,11 +89,6 @@ a {
     display: block;
 }
 
-/* determin accent color */
-
-/* .accent {
-    color: var(--accent-color);
-} */
 
 /* ----------------Visually Hidden block--------------------------- */
 .visually-hidden {
@@ -111,7 +107,7 @@ a {
 /* --------------header settings------------- */
 
 header {
-    padding-top: 24px;
+    padding-top: 25px;
     padding-bottom: 25px;
     font-weight: 500;
     font-size: 14px;
@@ -137,28 +133,40 @@ header a {
 
 .container.header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .header-contacts {
     margin-left: auto;
 }
 
+.header-contacts .item {
+    display: flex;
+}
+
 .header-contacts .link {
     color: var(--primary-text-color);
+    fill: #757575;
+    display: flex;
+}
+
+.header-contacts .icon {
+    margin-right: 10px;
 }
 
 .link {
     display: block;
 }
 
-
 .header-contacts .link:hover,
 .navigation .link:hover,
 .header-contacts .link:focus,
 .navigation .link:focus {
     color: var(--accent-color);
+    fill: var(--accent-color);
 }
+
+
 
 .navigation,
 .header-contacts {
@@ -182,10 +190,6 @@ header a {
     text-decoration: none;
 }
 
-.logo.footer-logo {
-    color: var(--main-white-color);
-}
-
 
 /* ----------------------------main settings------------- */
 /* ------------------------hero settings------------ */
@@ -195,6 +199,15 @@ header a {
     letter-spacing: 0.06em;
     padding-top: 200px;
     padding-bottom: 200px;
+}
+
+.hero.section {
+    min-width: 1600px;
+    min-height: 600px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/Img_hero_o.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .hero .slogan {
@@ -224,7 +237,7 @@ header a {
     background-color: #188CE8;
 }
 
-/* -----------------advantages----------- */
+/* ----------------------advantages---------------- */
 
 .advantages {
     font-size: 14px;
@@ -259,6 +272,10 @@ header a {
     margin-left: 30px;
 }
 
+.advantages .icon {
+    margin-bottom: 30px;
+}
+
 
 
 /* ------------------our-work--------------*/
@@ -288,13 +305,20 @@ header a {
     display: flex;
 }
 
+.our-team .item {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
 .our-team .item+.item {
     margin-left: 30px;
 }
 
 .our-team .fio {
-    padding-bottom: 30px;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .our-team h2 {
@@ -317,11 +341,86 @@ header a {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.9;
+    margin-bottom: 16px;
     text-align: center;
 }
 
 .our-team .item {
     background-color: var(--main-white-color);
+}
+
+.our-team .social-networks {
+    list-style-type: none;
+    display: flex;
+}
+
+
+.social-networks .item-social+.item-social {
+    margin-left: 10px;
+}
+
+.social-networks .svg {
+    border-radius: 50%;
+
+    fill: #afb1b8;
+    /* background-color: teal; */
+}
+
+.social-networks .svg:hover,
+.social-networks .svg:focus {
+    /* cursor: pointer; */
+    background-color: var(--accent-color);
+    fill: var(--main-white-color);
+}
+
+/* -----------------------REGULAR CUSTOMERS---------------------------- */
+
+.regular-customers {
+    text-align: center;
+}
+
+.regular-customers h2 {
+    font-size: 36px;
+    line-height: 1.16;
+    margin-bottom: 50px;
+}
+
+.regular-customers .list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.regular-customers .link {
+    display: block;
+    width: 170px;
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    /* justify-content: space-between; */
+
+}
+
+.regular-customers .svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    fill: currentColor;
+    ;
+}
+
+.regular-customers .link {
+    color: var(--icons-color);
+}
+
+.regular-customers .link:hover,
+.regular-customers .link:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* ----------------footer---------------- */
@@ -334,11 +433,13 @@ footer {
 
 .container.footer {
     text-align: left;
+    display: flex;
 
 }
 
 .logo.footer-logo {
-    display: block;
+    color: var(--main-white-color);
+    display: inline-block;
     margin-bottom: 20px;
 }
 
@@ -355,14 +456,38 @@ footer {
     margin-bottom: 9px;
 }
 
-.address a {
-    display: inline-block;
+.address a:not(.footer-logo) {
+    display: inline-flex;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     margin-bottom: 9px;
+}
+
+.social-links {
+    margin-top: 12px;
+    margin-left: 70px;
+    text-align: left;
+}
+
+.social-links h2 {
+    color: var(--main-white-color);
+    font-size: 14px;
+    line-height: 1.14;
+    margin-bottom: 20px;
+}
+
+.footer .svg {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-networks {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    /* align-intems: left; */
 }
 
 
@@ -375,7 +500,16 @@ footer {
     margin-bottom: 50px;
 }
 
-.btn-filter {
+.job-examples.section {
+    border-top: 1px solid #ECECEC;
+}
+
+.job-examples .filter {
+    display: flex;
+    justify-content: center;
+}
+
+.filter .btn-filter {
     background-color: var(--ourteam-background-color);
     color: var(--title-text-color);
     font-weight: 500;
@@ -398,14 +532,6 @@ footer {
     border: 1px solid var(--accent-color);
 }
 
-.job-examples.section {
-    border-top: 1px solid #ECECEC;
-}
-
-.job-examples .filter {
-    display: flex;
-    justify-content: center;
-}
 
 .filter .item+.item {
     margin-left: 8px;
@@ -415,6 +541,13 @@ footer {
 
 .job-examples a {
     text-decoration: none;
+}
+
+.job-examples .item:hover,
+.job-examples .item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .job-examples p {
